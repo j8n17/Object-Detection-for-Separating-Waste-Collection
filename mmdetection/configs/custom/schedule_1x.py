@@ -1,5 +1,7 @@
 # optimizer
-optimizer = dict(type='SGD', lr=0.002, momentum=0.9, weight_decay=0.0001) # lr default = 0.02
+optimizer = dict(type='Adam', lr=0.00001, weight_decay=0.001) 
+# optimizer = dict(type='SGD', lr=0.00001, momentum=0.9, weight_decay=0.0001) 
+# lr default = 0.02, type='SGD'
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(

@@ -264,8 +264,9 @@ def main():
     #######################################################
     if args.name:
         submission = make_submisson_csv(cfg.data.test.ann_file, outputs)
-        cfg.work_dir = './work_dirs/faster_rcnn_backbone_swin'
-        submission.to_csv(os.path.join(cfg.work_dir, f'{args.name}.csv'), index=None)
+        # cfg.work_dir = './work_dirs/faster_rcnn_backbone_swin'
+        model_name = cfg.work_dir.split("/")[-1]
+        submission.to_csv(os.path.join(cfg.work_dir, f'{model_name}_{args.name}.csv'), index=None)
         print("#"*50)
         print(f"파일 생성 위치: {cfg.work_dir}")
         print("#"*50)

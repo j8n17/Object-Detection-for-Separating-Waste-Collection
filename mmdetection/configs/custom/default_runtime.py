@@ -8,8 +8,8 @@ log_config = dict(
         dict(type='WandbLoggerHook',interval=1000,
             init_kwargs=dict(
                 project= "drivingyouth-OD", #'PROJECT 이름',
-                entity = "drivingyouth", # 'ENTITY 이름',
-                name = "driving" #'실험할때마다 RUN에 찍히는 이름'
+                entity = "hbage", # 'ENTITY 이름',
+                name = "test1" #'실험할때마다 RUN에 찍히는 이름'
             ),
             )
         # dict(type='TensorboardLoggerHook')

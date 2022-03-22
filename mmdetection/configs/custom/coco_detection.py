@@ -32,7 +32,7 @@ test_pipeline = [
 ]
 data = dict(
     samples_per_gpu=4, ## gpu당 batch사이즈 몇으로 할건지 , 2->4 
-    workers_per_gpu=2, # data loader 를 만들때 worker개수 선언해주는 것과 동일
+    workers_per_gpu=6, # data loader 를 만들때 worker개수 선언해주는 것과 동일 default =2
     train=dict(
         type=dataset_type,
         ann_file=data_root + 'train.json', ## train annotation file 위치
@@ -51,4 +51,4 @@ data = dict(
         img_prefix=data_root, # + 'val2017/', ## data root 위치
         classes = classes,
         pipeline=test_pipeline)) ## classes 추가
-evaluation = dict(interval=1, metric='bbox')
+evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP_50')
