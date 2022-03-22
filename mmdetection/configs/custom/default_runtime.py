@@ -1,11 +1,11 @@
 checkpoint_config = dict(interval=1)
 # yapf:disable
 log_config = dict(
-    interval=1221,
+    interval=400,
     hooks=[
         dict(type='TextLoggerHook'),
         # wandb 등록
-        dict(type='WandbLoggerHook',interval=1000,
+        dict(type='WandbLoggerHook', #interval=1000,
             init_kwargs=dict(
                 project= "drivingyouth-OD", #'PROJECT 이름',
                 entity = "hbage", # 'ENTITY 이름',

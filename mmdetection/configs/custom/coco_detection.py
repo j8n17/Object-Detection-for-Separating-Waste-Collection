@@ -31,7 +31,7 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=4, ## gpu당 batch사이즈 몇으로 할건지 , 2->4 
+    samples_per_gpu=8, ## gpu당 batch사이즈 몇으로 할건지 , 2->4 
     workers_per_gpu=6, # data loader 를 만들때 worker개수 선언해주는 것과 동일 default =2
     train=dict(
         type=dataset_type,

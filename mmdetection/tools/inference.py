@@ -123,15 +123,16 @@ def make_submisson_csv(annotation_file_route, outputs):
     file_names = []
     coco = COCO(annotation_file_route)
     img_ids = coco.getImgIds()
-
+    score_threshold = 0.05
     class_num = 10
     for i, out in enumerate(outputs):
         prediction_string = ''
         image_info = coco.loadImgs(coco.getImgIds(imgIds=i))[0]
         for j in range(class_num):
             for o in out[j]:
-                prediction_string += str(j) + ' ' + str(o[4]) + ' ' + str(o[0]) + ' ' + str(o[1]) + ' ' + str(
-                    o[2]) + ' ' + str(o[3]) + ' '
+                if o[4] > score_threshold:
+                    prediction_string += str(j) + ' ' + str(o[4]) + ' ' + str(o[0]) + ' ' + str(o[1]) + ' ' + str(
+                        o[2]) + ' ' + str(o[3]) + ' '
             
         prediction_strings.append(prediction_string)
         file_names.append(image_info['file_name'])
