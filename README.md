@@ -3,4 +3,4 @@
 
 - **submission file을 통한 Bbox 시각화**
 
-  ![image-20220321230859689](../../../AppData/Roaming/Typora/typora-user-images/image-20220321230859689.png)
+  ![image](https://user-images.githubusercontent.com/71866756/159278927-57bd4b8f-ef48-4b84-93bd-7102bcc6bdf5.png)
