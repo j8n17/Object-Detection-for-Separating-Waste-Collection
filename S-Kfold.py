@@ -33,28 +33,6 @@ def parse_args():
         default='/opt/ml/detection/dataset',
         help='new annotation files save directory')
 
-    
-    # parser.add_argument(
-    #     '--tp-iou-thr',
-    #     type=float,
-    #     default=0.5,
-    #     help='IoU threshold to be considered as matched')
-    # parser.add_argument(
-    #     '--nms-iou-thr',
-    #     type=float,
-    #     default=None,
-    #     help='nms IoU threshold, only applied when users want to change the'
-    #     'nms IoU threshold.')
-    # parser.add_argument(
-    #     '--cfg-options',
-    #     nargs='+',
-    #     action=DictAction,
-    #     help='override some settings in the used config, the key-value pair '
-    #     'in xxx=yyy format will be merged into config file. If the value to '
-    #     'be overwritten is a list, it should be like key="[a,b]" or key=a,b '
-    #     'It also allows nested list/tuple values, e.g. key="[(a,b),(c,d)]" '
-    #     'Note that the quotation marks are necessary and that no white space '
-    #     'is allowed.')
     args = parser.parse_args()
     return args
 
