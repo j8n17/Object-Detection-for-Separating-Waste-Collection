@@ -44,7 +44,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
     ```
 
 
-# 3. Result Analsis tool
+# 3. Result Analysis tool
 
 - **사용 방법**
 
@@ -87,4 +87,12 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
     `analysis.ipynb`의 `통계치 섹션` 실행하여 통계치 시각화
 
-    
+# 4. Stratified K-fold
+
+- **사용 방법**
+
+  ```python
+  > python S-Kfold.py --ann-path [원본 train.json파일 경로] --kfold [kfold에서 k]--save-dir [새로운 annotation file 저장 directory] 
+  ```
+
+  
