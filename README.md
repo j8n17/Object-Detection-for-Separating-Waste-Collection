@@ -92,7 +92,13 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 - **사용 방법**
 
   ```python
+  # 필요한 라이브러리 설치
+  pip install iterative-stratification
+  ```
+  
+  ```python
+  # 실행 명령어
   > python S-Kfold.py --ann-path [원본 train.json파일 경로] --kfold [kfold에서 k]--save-dir [새로운 annotation file 저장 directory] 
   ```
-
+  
   
