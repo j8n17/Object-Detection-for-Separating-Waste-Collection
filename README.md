@@ -73,7 +73,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
     `analysis.ipynb`의 `시각화 섹션` 실행하여 bbox 시각화
 
-    ![image](https://user-images.githubusercontent.com/71866756/160035873-da05c6b6-2504-41f7-ba5e-326a74dabbf6.png)
+    ![image-20220325214819577](../../../AppData/Roaming/Typora/typora-user-images/image-20220325214821058.png)
 
     > img_idx : 이미지 번호
     >
