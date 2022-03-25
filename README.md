@@ -20,7 +20,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
     [여기](https://www.kaggle.com/datasets/kneroma/tacotrashdataset?select=data)에서 download 클릭!
 
-    ![image-20220323001024571](../../../AppData/Roaming/Typora/typora-user-images/image-20220323001024571.png)
+    ![image](https://user-images.githubusercontent.com/71866756/160035859-b0c0cf95-4930-4701-a22c-2398ae993f28.png)
 
   - Step2. kaggle_dataset_transform.ipynb download
 
@@ -73,7 +73,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
     `analysis.ipynb`의 `시각화 섹션` 실행하여 bbox 시각화
 
-    ![image-20220324231223629](../../../AppData/Roaming/Typora/typora-user-images/image-20220324231223629.png)
+    ![image](https://user-images.githubusercontent.com/71866756/160035873-da05c6b6-2504-41f7-ba5e-326a74dabbf6.png)
 
     > img_idx : 이미지 번호
     >
