@@ -16,7 +16,7 @@ parser.add_argument('--samples_per_gpu', type=int, default=8, help='samples_per_
 parser.add_argument('--seed', type=int, default=2022, help='seed')
 parser.add_argument('--checkpoint', default=True, help='default: max_keep_ckpts=3, interval=1')
 parser.add_argument('--workflow', default=[('train', 1)], help='workflow')
-parser.add_argument('--valid', default=False, help='validation')
+parser.add_argument('--valid', default=True, help='validation')
 
 args = parser.parse_args()
 
@@ -53,7 +53,7 @@ cfg.workflow = args.workflow
 
 # Train
 # build_dataset
-datasets = [build_dataset(cfg.data.train)]
+datasets = [build_dataset(cfg.data.train), build_dataset(cfg.data.val)]
 #print(type(datasets[0]))
 
 # 모델 build 및 pretrained network 불러오기
@@ -61,5 +61,5 @@ model = build_detector(cfg.model)
 model.init_weights()
 
 # 모델 학습 (Build data loaders, MMDataParallel, build runner(include model, optimizer, logger, workdir, register runner's hook, valid dataloader,...), runner run)
-train_detector(model, datasets[0], cfg, distributed=False, validate=args.valid)
+train_detector(model, datasets, cfg, distributed=False, validate=args.valid)
 
