@@ -53,7 +53,7 @@ cfg.workflow = args.workflow
 
 # Train
 # build_dataset
-datasets = [build_dataset(cfg.data.train), build_dataset(cfg.data.val)]
+datasets = [build_dataset(cfg.data.train)]
 #print(type(datasets[0]))
 
 # 모델 build 및 pretrained network 불러오기
