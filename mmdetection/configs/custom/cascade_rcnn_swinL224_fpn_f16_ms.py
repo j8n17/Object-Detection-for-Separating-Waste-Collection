@@ -245,7 +245,7 @@ data = dict(
         pipeline=train_pipeline), ## classes 추가
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'val.json', # + 'val.json', ## validation annotation file 위치
+        ann_file=data_root + 'train.json', # + 'val.json', ## validation annotation file 위치
         img_prefix=data_root, # + 'val2017/', ## data root 위치
         classes = classes,
         pipeline=test_pipeline), ## classes 추가
@@ -256,7 +256,7 @@ data = dict(
         classes = classes,
         pipeline=test_pipeline)) ## classes 추가
 
-evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP_50')
+evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP_50', classwise=True)
 
 # optimizer
 optimizer = dict(type='AdamW', lr=0.00001, weight_decay=0.001) 
@@ -283,7 +283,7 @@ log_config = dict(
             init_kwargs=dict(
                 project= "drivingyouth-OD", #'PROJECT 이름',
                 entity = "hbage", # 'ENTITY 이름',
-                name = "cascade_rcnn_swinL224_fpn_f16_ms" #'실험할때마다 RUN에 찍히는 이름'
+                name = "cascade_rcnn_swinL224_fpn_f16_ms_valid" #'실험할때마다 RUN에 찍히는 이름'
             ),
             )
         # dict(type='TensorboardLoggerHook')
@@ -303,6 +303,6 @@ opencv_num_threads = 0
 # set multi-process start method as `fork` to speed up the training
 mp_start_method = 'fork'
 
-work_dir = './work_dirs/cascade_rcnn_swinL224_fpn_f16_ms'
+work_dir = './work_dirs/cascade_rcnn_swinL224_fpn_f16_ms_valid'
 fp16 = dict(loss_scale=512.)
 seed = 2000
