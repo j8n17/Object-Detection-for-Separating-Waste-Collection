@@ -1,8 +1,11 @@
 # dataset settings
 dataset_type = 'CocoDataset'
 data_root = '../../../dataset'
+gpu_ids = [0]
+work_dir = './work_dirs'
+seed = 2022
 img_norm_cfg = dict(
-    mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
+    mean=[109.96, 117.28, 123.46], std=[54.89, 53.50, 54.10], to_rgb=True)
 classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass", 
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 train_pipeline = [
@@ -42,7 +45,7 @@ data = dict(
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + '/train.json',
+        ann_file=data_root + '/SK_val_annotations.json',
         img_prefix=data_root,
         pipeline=test_pipeline),
     test=dict(
