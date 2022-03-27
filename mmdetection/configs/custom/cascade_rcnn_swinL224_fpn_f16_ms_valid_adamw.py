@@ -13,7 +13,7 @@ model = dict(
         qk_scale=None,
         drop_rate=0.,
         attn_drop_rate=0.,
-        drop_path_rate=0.2,
+        drop_path_rate=0.3,
         patch_norm=True,
         out_indices=(0, 1, 2, 3),
         with_cp=False,
@@ -202,15 +202,8 @@ train_pipeline = [
     dict(type='LoadAnnotations', with_bbox=True),
     dict(
         type='Resize',
-        img_scale=[(512, 512), (608, 608),
-                    (704, 704), (736, 736),
-                    (832, 832), (864, 864),
-                    (960, 960), (992, 992),
-                    (1056, 1056), (1088, 1088),
-                    (1152, 1152), (1184, 1184),
-                    (1248, 1248), (1280, 1280),
-        ],
-        multiscale_mode='value',
+        img_scale=[(512, 512), (1536, 1536)],
+        multiscale_mode='range',
         keep_ratio=True),
     # dict(type='Resize', img_scale=(512, 512), keep_ratio=True), # Resize
     dict(type='RandomFlip', flip_ratio=0.5),
@@ -235,7 +228,7 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=2, ## gpu당 batch사이즈 몇으로 할건지 , 2->4 
+    samples_per_gpu=1, ## gpu당 batch사이즈 몇으로 할건지 , 2->4 
     workers_per_gpu=2, # data loader 를 만들때 worker개수 선언해주는 것과 동일 default =2
     train=dict(
         type=dataset_type,
@@ -282,7 +275,7 @@ lr_config = dict(
     step= [8, 11]) #[8, 11]) # step은 얼마마다 밟은 건지
 runner = dict(type='EpochBasedRunner', max_epochs=20)
 
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=1, max_keep_ckpts=3)
 # yapf:disable
 log_config = dict(
     interval=200,
