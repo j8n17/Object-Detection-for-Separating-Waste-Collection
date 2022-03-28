@@ -11,11 +11,13 @@ model = dict(
         norm_eval=True,
         style='pytorch',
         init_cfg=dict(type='Pretrained', checkpoint='torchvision://resnet50')),
-    neck=dict(
+    neck=[dict(
         type='FPN',
         in_channels=[256, 512, 1024, 2048],
         out_channels=256,
         num_outs=5),
+        dict(type='DyHead', in_channels=256, out_channels=256, num_blocks=6)
+    ],
     rpn_head=dict(
         type='RPNHead',
         in_channels=256,

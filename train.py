@@ -4,11 +4,13 @@ from mmdet.models import build_detector
 from mmdet.apis import train_detector
 from mmdet.datasets import (build_dataloader, build_dataset, replace_ImageToTensor)
 import argparse
+from mmdet import __version__
+from mmcv.utils import get_git_hash
 
 parser = argparse.ArgumentParser()
 
 
-parser.add_argument('--cfg_file', type=str, default='./atss_swinL_fpn_dyhead_1x_trash.py', help='config_file_path')
+parser.add_argument('--cfg_file', type=str, default='./cascade_rcnn_r50_fpn_1x_trash.py', help='config_file_path')
 parser.add_argument('--exp_name', type=str, default='faster_rcnn_r50_fpn_1x_trash', help='experiment name')
 parser.add_argument('--train_resize', default=[(512,512), (768, 768), (1024, 1024)], help='train_resize')
 parser.add_argument('--test_resize', default=[(512,512), (768, 768), (1024, 1024)], help='test_resize')
@@ -44,20 +46,29 @@ cfg.workflow = args.workflow
 cfg.runner.max_epochs = args.max_epochs
 cfg.resume_from = args.resume_from
 
-
-
+# meta
+meta = dict()
+meta['seed'] = cfg.seed
+# meta['exp_name'] = osp.basename(args.config)
 
 #print(DATASETS)
 
 # Train
 # build_dataset
 datasets = [build_dataset(cfg.data.train)]
-#print(type(datasets[0]))
+
+# meta
+if cfg.checkpoint_config is not None:
+        # save mmdet version, config file content and class names in
+        # checkpoints as meta data
+        cfg.checkpoint_config.meta = dict(
+            mmdet_version=__version__ + get_git_hash()[:7],
+            CLASSES=datasets[0].CLASSES)
 
 # 모델 build 및 pretrained network 불러오기
 model = build_detector(cfg.model)
 model.init_weights()
 
 # 모델 학습 (Build data loaders, MMDataParallel, build runner(include model, optimizer, logger, workdir, register runner's hook, valid dataloader,...), runner run)
-train_detector(model, datasets, cfg, distributed=False, validate=args.valid)
+train_detector(model, datasets, cfg, distributed=False, validate=args.valid, meta=meta)
 
