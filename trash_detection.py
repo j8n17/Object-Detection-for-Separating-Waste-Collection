@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '../../../dataset'
+data_root = '../../../stratified_kfold'
 gpu_ids = [0]
 work_dir = './work_dirs'
 seed = 2022
@@ -39,19 +39,19 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + '/SK_train_annotations.json',
-        img_prefix=data_root,
+        ann_file=data_root + '/cv_train_1.json',
+        img_prefix='../../../dataset',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + '/SK_val_annotations.json',
-        img_prefix=data_root,
+        ann_file=data_root + '/cv_val_1.json',
+        img_prefix='../../../dataset',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + '/test.json',
-        img_prefix=data_root,
+        ann_file='../../../dataset/test.json',
+        img_prefix='../../../dataset',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox', save_best='bbox_mAP', classwise=True)
