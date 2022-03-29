@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "tools/plain_train_net_multi.py", line 380, in <module>
+    args=(args,),
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/launch.py", line 82, in launch
+    main_func(*args)
+  File "tools/plain_train_net_multi.py", line 351, in main
+    cfg = setup(args)
+  File "tools/plain_train_net_multi.py", line 202, in setup
+    cfg.merge_from_file(args.config_file)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/config/config.py", line 45, in merge_from_file
+    assert PathManager.isfile(cfg_filename), f"Config file '{cfg_filename}' does not exist!"
+AssertionError: Config file '' does not exist!

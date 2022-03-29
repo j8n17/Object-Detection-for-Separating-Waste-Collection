@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "train.py", line 116, in <module>
+    trainer = MyTrainer(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/defaults.py", line 381, in __init__
+    model = self.build_model(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/defaults.py", line 512, in build_model
+    model = build_model(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/modeling/meta_arch/build.py", line 23, in build_model
+    model.to(torch.device(cfg.MODEL.DEVICE))
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+KeyboardInterrupt

@@ -1,0 +1,154 @@
+2022-03-27 17:32:54,947 INFO    MainThread:20443 [internal.py:wandb_internal():95] W&B internal server running at pid: 20443, started at: 2022-03-27 17:32:54.947641
+2022-03-27 17:32:54,951 DEBUG   SenderThread:20443 [sender.py:send():235] send: header
+2022-03-27 17:32:54,951 INFO    WriterThread:20443 [datastore.py:open_for_write():77] open: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/run-2pwit5mo.wandb
+2022-03-27 17:32:54,952 DEBUG   SenderThread:20443 [sender.py:send():235] send: run
+2022-03-27 17:32:55,222 INFO    SenderThread:20443 [dir_watcher.py:__init__():169] watching files in: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files
+2022-03-27 17:32:55,223 INFO    SenderThread:20443 [sender.py:_start_run_threads():815] run started: 2pwit5mo with start time 1648402374
+2022-03-27 17:32:55,223 DEBUG   SenderThread:20443 [sender.py:send():235] send: summary
+2022-03-27 17:32:55,224 INFO    SenderThread:20443 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-27 17:32:55,226 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: check_version
+2022-03-27 17:32:55,226 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: check_version
+2022-03-27 17:32:55,259 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: run_start
+2022-03-27 17:32:55,954 DEBUG   HandlerThread:20443 [meta.py:__init__():37] meta init
+2022-03-27 17:32:55,954 DEBUG   HandlerThread:20443 [meta.py:__init__():51] meta init done
+2022-03-27 17:32:55,954 DEBUG   HandlerThread:20443 [meta.py:probe():211] probe
+2022-03-27 17:32:55,960 DEBUG   HandlerThread:20443 [meta.py:_setup_git():201] setup git
+2022-03-27 17:32:55,982 DEBUG   HandlerThread:20443 [meta.py:_setup_git():208] setup git done
+2022-03-27 17:32:55,982 DEBUG   HandlerThread:20443 [meta.py:_save_pip():55] save pip
+2022-03-27 17:32:55,982 DEBUG   HandlerThread:20443 [meta.py:_save_pip():69] save pip done
+2022-03-27 17:32:55,982 DEBUG   HandlerThread:20443 [meta.py:_save_conda():76] save conda
+2022-03-27 17:32:56,224 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/requirements.txt
+2022-03-27 17:32:56,225 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/conda-environment.yaml
+2022-03-27 17:32:56,225 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/wandb-summary.json
+2022-03-27 17:32:56,564 DEBUG   HandlerThread:20443 [meta.py:_save_conda():86] save conda done
+2022-03-27 17:32:56,564 DEBUG   HandlerThread:20443 [meta.py:probe():249] probe done
+2022-03-27 17:32:56,598 DEBUG   SenderThread:20443 [sender.py:send():235] send: files
+2022-03-27 17:32:56,598 INFO    SenderThread:20443 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-03-27 17:32:56,604 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-27 17:32:56,604 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: stop_status
+2022-03-27 17:32:56,614 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: partial_history
+2022-03-27 17:32:56,795 DEBUG   SenderThread:20443 [sender.py:send():235] send: telemetry
+2022-03-27 17:32:56,795 DEBUG   SenderThread:20443 [sender.py:send():235] send: telemetry
+2022-03-27 17:32:56,795 DEBUG   SenderThread:20443 [sender.py:send():235] send: run
+2022-03-27 17:32:57,063 INFO    SenderThread:20443 [sender.py:send_run():710] updated run: 2pwit5mo
+2022-03-27 17:32:57,063 DEBUG   SenderThread:20443 [sender.py:send():235] send: telemetry
+2022-03-27 17:32:57,223 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_modified():230] file/dir modified: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/config.yaml
+2022-03-27 17:32:57,224 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/wandb-metadata.json
+2022-03-27 17:32:57,224 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/output.log
+2022-03-27 17:32:57,244 INFO    Thread-11 :20443 [upload_job.py:push():137] Uploaded file /tmp/tmp6turf_fywandb/1ohxtao1-wandb-metadata.json
+2022-03-27 17:32:59,112 DEBUG   SenderThread:20443 [sender.py:send():235] send: exit
+2022-03-27 17:32:59,112 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:32:59,112 INFO    SenderThread:20443 [sender.py:send_exit():371] handling exit code: 1
+2022-03-27 17:32:59,113 INFO    SenderThread:20443 [sender.py:send_exit():373] handling runtime: 3
+2022-03-27 17:32:59,113 INFO    SenderThread:20443 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-27 17:32:59,113 INFO    SenderThread:20443 [sender.py:send_exit():379] send defer
+2022-03-27 17:32:59,113 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:32:59,114 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,114 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 0
+2022-03-27 17:32:59,114 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,114 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-03-27 17:32:59,114 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 1
+2022-03-27 17:32:59,115 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,115 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 1
+2022-03-27 17:32:59,186 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,186 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-03-27 17:32:59,186 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 2
+2022-03-27 17:32:59,187 DEBUG   SenderThread:20443 [sender.py:send():235] send: stats
+2022-03-27 17:32:59,187 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,187 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 2
+2022-03-27 17:32:59,187 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,187 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-03-27 17:32:59,187 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 3
+2022-03-27 17:32:59,188 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,188 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 3
+2022-03-27 17:32:59,188 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,188 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-03-27 17:32:59,188 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 4
+2022-03-27 17:32:59,188 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,188 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 4
+2022-03-27 17:32:59,189 DEBUG   SenderThread:20443 [sender.py:send():235] send: summary
+2022-03-27 17:32:59,189 INFO    SenderThread:20443 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-27 17:32:59,189 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,189 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-03-27 17:32:59,189 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 5
+2022-03-27 17:32:59,189 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,190 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 5
+2022-03-27 17:32:59,190 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,190 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-03-27 17:32:59,215 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:32:59,224 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_modified():230] file/dir modified: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/output.log
+2022-03-27 17:32:59,224 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_modified():230] file/dir modified: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/wandb-summary.json
+2022-03-27 17:32:59,418 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 6
+2022-03-27 17:32:59,418 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:32:59,419 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:32:59,419 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 6
+2022-03-27 17:32:59,419 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:32:59,419 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-03-27 17:32:59,419 INFO    SenderThread:20443 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-03-27 17:32:59,519 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,225 INFO    Thread-7  :20443 [dir_watcher.py:_on_file_modified():230] file/dir modified: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/config.yaml
+2022-03-27 17:33:00,225 INFO    SenderThread:20443 [dir_watcher.py:finish():313] scan: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files
+2022-03-27 17:33:00,225 INFO    SenderThread:20443 [dir_watcher.py:finish():327] scan save: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/conda-environment.yaml conda-environment.yaml
+2022-03-27 17:33:00,225 INFO    SenderThread:20443 [dir_watcher.py:finish():327] scan save: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/wandb-metadata.json wandb-metadata.json
+2022-03-27 17:33:00,226 INFO    SenderThread:20443 [dir_watcher.py:finish():327] scan save: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/output.log output.log
+2022-03-27 17:33:00,226 INFO    SenderThread:20443 [dir_watcher.py:finish():327] scan save: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/requirements.txt requirements.txt
+2022-03-27 17:33:00,226 INFO    SenderThread:20443 [dir_watcher.py:finish():327] scan save: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/config.yaml config.yaml
+2022-03-27 17:33:00,229 INFO    SenderThread:20443 [dir_watcher.py:finish():327] scan save: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/wandb-summary.json wandb-summary.json
+2022-03-27 17:33:00,233 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 7
+2022-03-27 17:33:00,233 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,240 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:33:00,240 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 7
+2022-03-27 17:33:00,241 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:33:00,241 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-03-27 17:33:00,241 INFO    SenderThread:20443 [file_pusher.py:finish():145] shutting down file pusher
+2022-03-27 17:33:00,335 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,335 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,437 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,437 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,542 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,543 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,644 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,644 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,745 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,746 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,779 INFO    Thread-14 :20443 [upload_job.py:push():137] Uploaded file /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/config.yaml
+2022-03-27 17:33:00,780 INFO    Thread-12 :20443 [upload_job.py:push():137] Uploaded file /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/output.log
+2022-03-27 17:33:00,784 INFO    Thread-15 :20443 [upload_job.py:push():137] Uploaded file /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/wandb-summary.json
+2022-03-27 17:33:00,847 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,847 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:00,942 INFO    Thread-13 :20443 [upload_job.py:push():137] Uploaded file /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/files/requirements.txt
+2022-03-27 17:33:00,949 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:00,949 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:01,050 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:01,050 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:01,143 INFO    Thread-6  :20443 [sender.py:transition_state():392] send defer: 8
+2022-03-27 17:33:01,143 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:33:01,143 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 8
+2022-03-27 17:33:01,144 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:33:01,144 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-03-27 17:33:01,151 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:01,359 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 9
+2022-03-27 17:33:01,359 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:01,360 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:33:01,360 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 9
+2022-03-27 17:33:01,360 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:33:01,361 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-03-27 17:33:01,361 INFO    SenderThread:20443 [sender.py:transition_state():392] send defer: 10
+2022-03-27 17:33:01,361 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: defer
+2022-03-27 17:33:01,361 DEBUG   SenderThread:20443 [sender.py:send():235] send: final
+2022-03-27 17:33:01,361 INFO    HandlerThread:20443 [handler.py:handle_request_defer():164] handle defer: 10
+2022-03-27 17:33:01,362 DEBUG   SenderThread:20443 [sender.py:send():235] send: footer
+2022-03-27 17:33:01,362 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: defer
+2022-03-27 17:33:01,362 INFO    SenderThread:20443 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-03-27 17:33:01,461 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-27 17:33:01,461 DEBUG   SenderThread:20443 [sender.py:send_request():249] send_request: poll_exit
+2022-03-27 17:33:01,461 INFO    SenderThread:20443 [file_pusher.py:join():150] waiting for file pusher
+2022-03-27 17:33:01,935 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: sampled_history
+2022-03-27 17:33:01,936 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: get_summary
+2022-03-27 17:33:01,936 DEBUG   HandlerThread:20443 [handler.py:handle_request():141] handle_request: shutdown
+2022-03-27 17:33:01,936 INFO    HandlerThread:20443 [handler.py:finish():778] shutting down handler
+2022-03-27 17:33:02,362 INFO    WriterThread:20443 [datastore.py:close():281] close: /opt/ml/detection/baseline/detectron2/wandb/run-20220327_173254-2pwit5mo/run-2pwit5mo.wandb
+2022-03-27 17:33:02,834 INFO    SenderThread:20443 [sender.py:finish():1078] shutting down sender
+2022-03-27 17:33:02,834 INFO    SenderThread:20443 [file_pusher.py:finish():145] shutting down file pusher
+2022-03-27 17:33:02,834 INFO    SenderThread:20443 [file_pusher.py:join():150] waiting for file pusher
+2022-03-27 17:33:02,836 INFO    MainThread:20443 [internal.py:handle_exit():82] Internal process exited

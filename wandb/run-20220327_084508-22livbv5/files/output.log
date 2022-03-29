@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "train.py", line 133, in <module>
+    trainer = MyTrainer(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/defaults.py", line 381, in __init__
+    model = self.build_model(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/defaults.py", line 512, in build_model
+    model = build_model(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/modeling/meta_arch/build.py", line 22, in build_model
+    model = META_ARCH_REGISTRY.get(meta_arch)(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/config/config.py", line 189, in wrapped
+    explicit_args = _get_args_from_config(from_config_func, *args, **kwargs)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/config/config.py", line 245, in _get_args_from_config
+    ret = from_config_func(*args, **kwargs)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/modeling/meta_arch/rcnn.py", line 72, in from_config
+    backbone = build_backbone(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/modeling/backbone/build.py", line 31, in build_backbone
+    backbone = BACKBONE_REGISTRY.get(backbone_name)(cfg, input_shape)
+  File "/opt/ml/detection/baseline/detectron2/tools/swint/swin_transformer.py", line 669, in build_swint_fpn_backbone
+    bottom_up = build_swint_backbone(cfg, input_shape)
+  File "/opt/ml/detection/baseline/detectron2/tools/swint/swin_transformer.py", line 642, in build_swint_backbone
+    embed_dim=cfg.MODEL.SWINT.EMBED_DIM,
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/yacs/config.py", line 141, in __getattr__
+    raise AttributeError(name)
+AttributeError: EMBED_DIM

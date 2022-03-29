@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "train.py", line 122, in <module>
+    trainer = MyTrainer(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/defaults.py", line 381, in __init__
+    model = self.build_model(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/engine/defaults.py", line 512, in build_model
+    model = build_model(cfg)
+  File "/opt/ml/detection/baseline/detectron2/detectron2/modeling/meta_arch/build.py", line 23, in build_model
+    model.to(torch.device(cfg.MODEL.DEVICE))
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+KeyboardInterrupt
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/opt/conda/envs/detection/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/opt/conda/envs/detection/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/wandb/sdk/wandb_run.py", line 149, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/wandb/sdk/interface/interface.py", line 125, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 397, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 222, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/opt/conda/envs/detection/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 227, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown

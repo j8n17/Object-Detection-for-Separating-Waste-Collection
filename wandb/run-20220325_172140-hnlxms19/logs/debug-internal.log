@@ -1,0 +1,42 @@
+2022-03-25 17:21:41,854 INFO    MainThread:12180 [internal.py:wandb_internal():95] W&B internal server running at pid: 12180, started at: 2022-03-25 17:21:41.854323
+2022-03-25 17:21:41,858 DEBUG   SenderThread:12180 [sender.py:send():235] send: header
+2022-03-25 17:21:41,858 INFO    WriterThread:12180 [datastore.py:open_for_write():77] open: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/run-hnlxms19.wandb
+2022-03-25 17:21:41,859 DEBUG   SenderThread:12180 [sender.py:send():235] send: run
+2022-03-25 17:21:42,188 INFO    SenderThread:12180 [dir_watcher.py:__init__():169] watching files in: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files
+2022-03-25 17:21:42,188 INFO    SenderThread:12180 [sender.py:_start_run_threads():815] run started: hnlxms19 with start time 1648228900
+2022-03-25 17:21:42,189 DEBUG   SenderThread:12180 [sender.py:send():235] send: summary
+2022-03-25 17:21:42,189 INFO    SenderThread:12180 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-25 17:21:42,190 DEBUG   HandlerThread:12180 [handler.py:handle_request():141] handle_request: check_version
+2022-03-25 17:21:42,191 DEBUG   SenderThread:12180 [sender.py:send_request():249] send_request: check_version
+2022-03-25 17:21:42,232 DEBUG   HandlerThread:12180 [handler.py:handle_request():141] handle_request: run_start
+2022-03-25 17:21:43,008 DEBUG   HandlerThread:12180 [meta.py:__init__():37] meta init
+2022-03-25 17:21:43,008 DEBUG   HandlerThread:12180 [meta.py:__init__():51] meta init done
+2022-03-25 17:21:43,008 DEBUG   HandlerThread:12180 [meta.py:probe():211] probe
+2022-03-25 17:21:43,014 DEBUG   HandlerThread:12180 [meta.py:_setup_git():201] setup git
+2022-03-25 17:21:43,035 DEBUG   HandlerThread:12180 [meta.py:_setup_git():208] setup git done
+2022-03-25 17:21:43,035 DEBUG   HandlerThread:12180 [meta.py:_save_pip():55] save pip
+2022-03-25 17:21:43,035 DEBUG   HandlerThread:12180 [meta.py:_save_pip():69] save pip done
+2022-03-25 17:21:43,036 DEBUG   HandlerThread:12180 [meta.py:_save_conda():76] save conda
+2022-03-25 17:21:43,189 INFO    Thread-7  :12180 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files/requirements.txt
+2022-03-25 17:21:43,190 INFO    Thread-7  :12180 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files/wandb-summary.json
+2022-03-25 17:21:43,190 INFO    Thread-7  :12180 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files/conda-environment.yaml
+2022-03-25 17:21:43,666 DEBUG   HandlerThread:12180 [meta.py:_save_conda():86] save conda done
+2022-03-25 17:21:43,666 DEBUG   HandlerThread:12180 [meta.py:probe():249] probe done
+2022-03-25 17:21:43,704 DEBUG   SenderThread:12180 [sender.py:send():235] send: files
+2022-03-25 17:21:43,704 INFO    SenderThread:12180 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-03-25 17:21:43,710 DEBUG   HandlerThread:12180 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-25 17:21:43,710 DEBUG   SenderThread:12180 [sender.py:send_request():249] send_request: stop_status
+2022-03-25 17:21:43,901 DEBUG   SenderThread:12180 [sender.py:send():235] send: telemetry
+2022-03-25 17:21:43,901 DEBUG   SenderThread:12180 [sender.py:send():235] send: telemetry
+2022-03-25 17:21:43,902 DEBUG   SenderThread:12180 [sender.py:send():235] send: run
+2022-03-25 17:21:44,162 INFO    SenderThread:12180 [sender.py:send_run():710] updated run: hnlxms19
+2022-03-25 17:21:44,188 INFO    Thread-7  :12180 [dir_watcher.py:_on_file_modified():230] file/dir modified: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files/config.yaml
+2022-03-25 17:21:44,189 INFO    Thread-7  :12180 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files/wandb-metadata.json
+2022-03-25 17:21:44,189 INFO    Thread-7  :12180 [dir_watcher.py:_on_file_created():217] file/dir created: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/files/output.log
+2022-03-25 17:21:44,264 INFO    Thread-11 :12180 [upload_job.py:push():137] Uploaded file /tmp/tmpocg1pp7twandb/2rlpnuz8-wandb-metadata.json
+2022-03-25 17:21:45,194 WARNING MainThread:12180 [internal.py:wandb_internal():155] Internal process interrupt: 1
+2022-03-25 17:21:46,712 WARNING MainThread:12180 [internal.py:wandb_internal():155] Internal process interrupt: 2
+2022-03-25 17:21:46,713 ERROR   MainThread:12180 [internal.py:wandb_internal():158] Internal process interrupted.
+2022-03-25 17:21:46,717 INFO    WriterThread:12180 [datastore.py:close():281] close: /opt/ml/detection/baseline/detectron2/wandb/run-20220325_172140-hnlxms19/run-hnlxms19.wandb
+2022-03-25 17:21:46,719 INFO    HandlerThread:12180 [handler.py:finish():778] shutting down handler
+2022-03-25 17:21:47,150 INFO    MainThread:12180 [internal.py:handle_exit():82] Internal process exited
