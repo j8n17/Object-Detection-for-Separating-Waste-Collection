@@ -16,11 +16,11 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 # config file 들고오기
-cfg = Config.fromfile('./atss_swinL_fpn_dyhead_1x_trash.py')
+cfg = Config.fromfile('./cascade_rcnn_r50_fpn_1x_trash.py')
 
 root='../../../dataset/'
 
-epoch = 'best_bbox_mAP_epoch_17'
+epoch = 'epoch_19'
 
 # dataset config 수정
 cfg.data.test.classes = classes
@@ -29,7 +29,7 @@ cfg.data.test.ann_file = root + 'test.json'
 cfg.data.test.pipeline[1]['img_scale'] = [(512,512), (768, 768), (1024, 1024)] # Resize
 cfg.data.test.test_mode = True
 
-cfg.data.samples_per_gpu = 4
+cfg.data.samples_per_gpu = 2
 
 cfg.seed=2021
 cfg.gpu_ids = [1]

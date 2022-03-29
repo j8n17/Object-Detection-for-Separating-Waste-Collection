@@ -10,7 +10,7 @@ from mmcv.utils import get_git_hash
 parser = argparse.ArgumentParser()
 
 
-parser.add_argument('--cfg_file', type=str, default='./cascade_rcnn_r50_fpn_1x_trash.py', help='config_file_path')
+parser.add_argument('--cfg_file', type=str, default='./cascade_swinL_fpn_dyhead_1x_trash.py', help='config_file_path')
 parser.add_argument('--exp_name', type=str, default='faster_rcnn_r50_fpn_1x_trash', help='experiment name')
 parser.add_argument('--train_resize', default=[(512,512), (768, 768), (1024, 1024)], help='train_resize')
 parser.add_argument('--test_resize', default=[(512,512), (768, 768), (1024, 1024)], help='test_resize')
