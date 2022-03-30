@@ -16,11 +16,11 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 # config file 들고오기
-cfg = Config.fromfile('./cascade_rcnn_r50_fpn_1x_trash.py')
+cfg = Config.fromfile('./cascade_swinL_fpn_dyhead_1x_trash.py')
 
 root='../../../dataset/'
 
-epoch = 'epoch_19'
+epoch = 'epoch_20'
 
 # dataset config 수정
 cfg.data.test.classes = classes
