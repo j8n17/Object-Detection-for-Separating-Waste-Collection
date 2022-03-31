@@ -6,15 +6,15 @@ from mmdet.datasets import (build_dataloader, build_dataset, replace_ImageToTens
 import argparse
 from mmdet import __version__
 from mmcv.utils import get_git_hash
-
+from mmcv.runner import GradientCumulativeOptimizerHook
 parser = argparse.ArgumentParser()
 
 
-parser.add_argument('--cfg_file', type=str, default='./faster_rcnn_r50_fpn_1x_trash.py', help='config_file_path')
+parser.add_argument('--cfg_file', type=str, default='./atss_swinL_fpn_dyhead_1x_trash.py', help='config_file_path')
 parser.add_argument('--exp_name', type=str, default='faster_rcnn_r50_fpn_1x_trash', help='experiment name')
 parser.add_argument('--train_resize', default=[(512,512), (768, 768), (1024, 1024)], help='train_resize')
 parser.add_argument('--test_resize', default=[(512,512), (768, 768), (1024, 1024)], help='test_resize')
-parser.add_argument('--samples_per_gpu', type=int, default=8, help='samples_per_gpu')
+parser.add_argument('--samples_per_gpu', type=int, default=2, help='samples_per_gpu')
 parser.add_argument('--seed', type=int, default=2022, help='seed')
 parser.add_argument('--workflow', default=[('train', 1)], help='workflow')
 parser.add_argument('--valid', default=True, help='validation')
@@ -56,6 +56,8 @@ meta['seed'] = cfg.seed
 # Train
 # build_dataset
 datasets = [build_dataset(cfg.data.train)]
+
+cfg.optim_hook = GradientCumulativeOptimizerHook(cumulative_iters=16)
 
 # meta
 if cfg.checkpoint_config is not None:
