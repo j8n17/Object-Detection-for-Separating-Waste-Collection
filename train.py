@@ -57,7 +57,12 @@ meta['seed'] = cfg.seed
 # build_dataset
 datasets = [build_dataset(cfg.data.train)]
 
-cfg.optim_hook = GradientCumulativeOptimizerHook(cumulative_iters=16)
+if len(cfg.workflow) == 2:
+        val_dataset = copy.deepcopy(cfg.data.val)
+        #val_dataset.pipeline = cfg.data.train.pipeline
+        datasets.append(build_dataset(val_dataset))
+
+# cfg.optim_hook = GradientCumulativeOptimizerHook(cumulative_iters=16)
 
 # meta
 if cfg.checkpoint_config is not None:

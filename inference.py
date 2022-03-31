@@ -16,11 +16,11 @@ classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass",
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
 
 # config file 들고오기
-cfg = Config.fromfile('./cascade_swinL_fpn_dyhead_1x_trash.py')
+cfg = Config.fromfile('./atss_swinL_fpn_dyhead_1x_trash.py')
 
 root='../../../dataset/'
 
-epoch = 'epoch_20'
+epoch = 'best_bbox_mAP_epoch_19'
 
 # dataset config 수정
 cfg.data.test.classes = classes
