@@ -9,7 +9,7 @@ from tqdm import tqdm, trange
 import copy
 
 DATA_PATH = '/opt/ml/detection/dataset'
-TRAIN_JSON_PATH = "/opt/ml/relabeling_train.json"
+TRAIN_JSON_PATH = "/opt/ml/cv_train_1.json"
 TEST_JSON_PATH = "/opt/ml/detection/dataset/test.json"
 
 with open(TEST_JSON_PATH, 'r') as f:
@@ -25,7 +25,7 @@ def main(args):
     annotation_dict_list = []
     img_dict_list = copy.deepcopy(json_data_test['images'])
 
-    if mode == 1:
+    if mode == 2:
         annotation_id = 23143
         # annotation_dict_list 채우기
         for i in trange(len(pseudo)):
@@ -52,7 +52,7 @@ def main(args):
                 category = int(split_list[j])
                 boxes = [float(split_list[j+k]) for k in range(2, 6)]
                 boxes[2] -= boxes[0]
-                boxes[3] -= boxes[2]
+                boxes[3] -= boxes[1]
                 
                 annotation_dict['category_id'] = category
                 annotation_dict['area'] = boxes[2] * boxes[3]
@@ -86,7 +86,7 @@ def main(args):
                     category = int(split_list[j])
                     boxes = [float(split_list[j+k]) for k in range(2, 6)]
                     boxes[2] -= boxes[0]
-                    boxes[3] -= boxes[2]
+                    boxes[3] -= boxes[1]
                     
                     annotation_dict['category_id'] = category
                     annotation_dict['area'] = boxes[2] * boxes[3]
@@ -118,6 +118,6 @@ if __name__ == "__main__":
     parser.add_argument('--path', '-p', type=str, default='/opt/ml/detection/dataset', help='pseudo_labeling.json saving path')
     parser.add_argument('--target', '-t', type=str, default="/opt/ml/best_result.csv", help='target csv that will be on pseudo labeling')
     parser.add_argument('--mode', '-m', type=int, default=1, help='mode1: extract top 10 confidence score bbox / mode2: cutting by confidence score')
-    parser.add_argument('--confidence_threshold', '-c', type=int, default=0.5, help='In mode2, we need confidence score to be threshold')
+    parser.add_argument('--confidence_threshold', '-c', type=float, default=0.5, help='In mode2, we need confidence score to be threshold')
     arg = parser.parse_args()
     main(arg)
