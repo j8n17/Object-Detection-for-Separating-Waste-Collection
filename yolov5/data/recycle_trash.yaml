@@ -9,7 +9,9 @@
 
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 path: /opt/ml/detection/  # dataset root dir
-train: dataset/cv_train_1.txt  # train images (relative to 'path') 118287 images
+train: 
+  - dataset/cv_train_1.txt  # train images (relative to 'path') 118287 images
+  - dataset/test.txt
 val: dataset/cv_val_1.txt  # val images (relative to 'path') 5000 images
 test: dataset/test.txt  # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
 
