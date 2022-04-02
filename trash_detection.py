@@ -4,29 +4,25 @@ data_root = '../../../stratified_kfold'
 gpu_ids = [0]
 work_dir = './work_dirs'
 seed = 2022
+resize_scale = [(512, 512)]
 img_norm_cfg = dict(
     mean=[109.96, 117.28, 123.46], std=[54.89, 53.50, 54.10], to_rgb=True)
 classes = ("General trash", "Paper", "Paper pack", "Metal", "Glass", 
            "Plastic", "Styrofoam", "Plastic bag", "Battery", "Clothing")
+mosaic_pipeline = [
+    dict(type='Mosaic', img_scale=(1024, 1024)),
+    dict(type='Resize', img_scale=resize_scale, multiscale_mode='value', keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(type='Normalize', **img_norm_cfg),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels']),
+]
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', with_bbox=True),
-    dict(type='Resize', img_scale=[(512, 512)], multiscale_mode='value', keep_ratio=True),
+    dict(type='Resize', img_scale=resize_scale, multiscale_mode='value', keep_ratio=True),
     dict(type='RandomFlip', flip_ratio=0.5),
-    dict(type='Albu',
-        transforms=[dict(type='RandomRotate90', p=0.5)],
-        bbox_params=dict(
-            type='BboxParams',
-            format='pascal_voc',
-            label_fields=['gt_labels'],
-            min_visibility=0.0,
-            filter_lost_elements=True),
-        keymap={
-            'img': 'image',
-            'gt_masks': 'masks',
-            'gt_bboxes': 'bboxes'},
-        update_pad_shape=False,
-        skip_img_without_anno=True),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='Pad', size_divisor=32),
     dict(type='DefaultFormatBundle'),
@@ -41,35 +37,36 @@ test_pipeline = [
         transforms=[
             dict(type='Resize', keep_ratio=True),
             dict(type='RandomFlip'),
-            dict(type='Albu',
-                transforms=[dict(type='RandomRotate90', p=0.5)],
-                bbox_params=dict(
-                    type='BboxParams',
-                    format='pascal_voc',
-                    label_fields=['gt_labels'],
-                    min_visibility=0.0,
-                    filter_lost_elements=True),
-                keymap={
-                    'img': 'image',
-                    'gt_masks': 'masks',
-                    'gt_bboxes': 'bboxes'},
-                update_pad_shape=False,
-                skip_img_without_anno=True),
             dict(type='Normalize', **img_norm_cfg),
             dict(type='Pad', size_divisor=32),
             dict(type='ImageToTensor', keys=['img']),
             dict(type='Collect', keys=['img']),
         ])
 ]
-data = dict(
-    samples_per_gpu=2,
-    workers_per_gpu=2,
-    train=dict(
+train_dataset = dict(
         type=dataset_type,
         classes=classes,
         ann_file=data_root + '/cv_train_1_remove_small.json',
         img_prefix='../../../dataset',
-        pipeline=train_pipeline),
+        pipeline=train_pipeline)
+
+mosaic_dataset = dict(
+        type='MultiImageMixDataset',
+        dataset=dict(
+            type=dataset_type,
+            ann_file=data_root + '/cv_train_1_remove_small.json',
+            img_prefix='../../../dataset',
+            classes=classes,
+            pipeline=[dict(type='LoadImageFromFile'),
+                dict(type='LoadAnnotations', with_bbox=True),
+            ]
+        ),
+        pipeline=mosaic_pipeline)
+
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=2,
+    train=[train_dataset, mosaic_dataset],
     val=dict(
         type=dataset_type,
         classes=classes,

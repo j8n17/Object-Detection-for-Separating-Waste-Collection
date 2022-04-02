@@ -20,7 +20,7 @@ cfg = Config.fromfile('./atss_swinL_fpn_dyhead_1x_trash.py')
 
 root='../../../dataset/'
 
-epoch = 'best_bbox_mAP_epoch_19'
+epoch = 'best_bbox_mAP_epoch_33'
 
 # dataset config 수정
 cfg.data.test.classes = classes

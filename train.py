@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser()
 
 
 parser.add_argument('--cfg_file', type=str, default='./atss_swinL_fpn_dyhead_1x_trash.py', help='config_file_path')
-parser.add_argument('--exp_name', type=str, default='faster_rcnn_r50_fpn_1x_trash', help='experiment name')
+parser.add_argument('--exp_name', type=str, default='atss_dyhead', help='experiment name')
 parser.add_argument('--train_resize', default=[(512,512), (768, 768), (1024, 1024)], help='train_resize')
 parser.add_argument('--test_resize', default=[(512,512), (768, 768), (1024, 1024)], help='test_resize')
 parser.add_argument('--samples_per_gpu', type=int, default=2, help='samples_per_gpu')
@@ -32,7 +32,7 @@ cfg.log_config.hooks[1].init_kwargs.config = args
 cfg.log_config.hooks[1].init_kwargs.name = args.exp_name
 
 # dataset config 수정
-cfg.data.train.pipeline[2]['img_scale'] = args.train_resize # multi scale resize
+cfg.data.resize_scale = args.train_resize # multi scale resize
 cfg.data.test.pipeline[1]['img_scale'] = args.test_resize # Resize
 cfg.data.samples_per_gpu = args.samples_per_gpu
 cfg.seed = args.seed
