@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '../../../stratified_kfold'
+data_root = '../../../dataset'
 gpu_ids = [0]
 work_dir = './work_dirs'
 seed = 2022
@@ -46,7 +46,7 @@ test_pipeline = [
 train_dataset = dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + '/cv_train_1_remove_small.json',
+        ann_file=data_root + '/pseudo_labeling.json',
         img_prefix='../../../dataset',
         pipeline=train_pipeline)
 
@@ -54,7 +54,7 @@ mosaic_dataset = dict(
         type='MultiImageMixDataset',
         dataset=dict(
             type=dataset_type,
-            ann_file=data_root + '/cv_train_1_remove_small.json',
+            ann_file=data_root + '/train.json',
             img_prefix='../../../dataset',
             classes=classes,
             pipeline=[dict(type='LoadImageFromFile'),
@@ -66,11 +66,11 @@ mosaic_dataset = dict(
 data = dict(
     samples_per_gpu=2,
     workers_per_gpu=2,
-    train=[train_dataset, mosaic_dataset],
+    train=train_dataset,
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + '/cv_val_1.json',
+        ann_file=data_root + '/stratified_kfold/cv_val_1.json',
         img_prefix='../../../dataset',
         pipeline=test_pipeline),
     test=dict(

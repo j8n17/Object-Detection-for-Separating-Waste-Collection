@@ -11,15 +11,15 @@ parser = argparse.ArgumentParser()
 
 
 parser.add_argument('--cfg_file', type=str, default='./atss_swinL_fpn_dyhead_1x_trash.py', help='config_file_path')
-parser.add_argument('--exp_name', type=str, default='atss_dyhead', help='experiment name')
-parser.add_argument('--train_resize', default=[(512,512), (768, 768), (1024, 1024)], help='train_resize')
-parser.add_argument('--test_resize', default=[(512,512), (768, 768), (1024, 1024)], help='test_resize')
+parser.add_argument('--exp_name', type=str, default='atss', help='experiment name')
+parser.add_argument('--train_resize', default=[(512,512),(768,768),(1024,1024)], help='train_resize')
+parser.add_argument('--test_resize', default=[(512,512),(768,768),(1024,1024)], help='test_resize')
 parser.add_argument('--samples_per_gpu', type=int, default=2, help='samples_per_gpu')
 parser.add_argument('--seed', type=int, default=2022, help='seed')
 parser.add_argument('--workflow', default=[('train', 1)], help='workflow')
 parser.add_argument('--valid', default=True, help='validation')
-parser.add_argument('--max_epochs', default=20, help='epochs')
-parser.add_argument('--resume_from', default=None, help='resume_from_pthfile_path')
+parser.add_argument('--max_epochs', default=40, help='epochs')
+parser.add_argument('--resume_from', default='/opt/ml/detection/baseline/mmdetection/level2-object-detection-level2-cv-08/best_bbox_mAP_epoch_33.pth', help='resume_from_pthfile_path')
 
 args = parser.parse_args()
 
