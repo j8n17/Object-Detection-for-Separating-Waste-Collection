@@ -73,8 +73,6 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
     `analysis.ipynb`의 `시각화 섹션` 실행하여 bbox 시각화
 
-    ![image-20220325214819577](../../../AppData/Roaming/Typora/typora-user-images/image-20220325214821058.png)
-
     > img_idx : 이미지 번호
     >
     > score_thr : Positive로 판단하기 위한 threshold
@@ -82,7 +80,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
     > tp_iou_thr : True Positive로 판단하기 위한 threshold
     >
     > cls_num : 시각화하고 싶은 label 번호 (10의 경우 전체 label에 대하여 시각화)
-
+    
   - **Step4**
 
     `analysis.ipynb`의 `통계치 섹션` 실행하여 통계치 시각화
@@ -101,4 +99,39 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
   > python S-Kfold.py --ann-path [원본 train.json파일 경로] --kfold [kfold에서 k]--save-dir [새로운 annotation file 저장 directory] 
   ```
   
+
+# 5. check_all_images
+
+<img src="../../../../AppData/Roaming/Typora/typora-user-images/image-20220408201025713.png" alt="image-20220408201025713" style="zoom:50%;" />
+
+- **사용 방법**
+
+  - description에 수정하고자 하는 내용을 적는다. 
+  - double_click을 더블클릭하면 description 내용을 이름으로 갖는 이미지 파일이 생성된다. 
+
   
+
+# 6. cutmix specific classes
+
+- 특정 클래스에 대해서 cutmix 이미지 생성 (4개의 cropped 된 박스를 하나의 이미지로 합친다.)
+
+# 7. delete_pth
+
+- pth 파일을 한 번에 삭제할 수 있다. 
+
+# 8. cutmix box tape images
+
+- box tape image를 찾아 cropped 후 합친다. 
+
+  > box tape를 최대한 걸렀지만, 나온 결과를 보면서 박스 테이프가 아닌 이미지는 제거해줘야 한다. 
+
+# 9. confusion_matrix_custom
+
+- inference결과를 confusion matrix 형태로 저장
+
+  > 1. 기존에는 비율만 나왔지만, 개수도 나오도록 수정하였다. 
+  >
+  >    (confusion_absolute_matrix.png로 나온다. )
+  >
+  > 2. 검출해내지 못한 박스들에 대해서 wrong_bbox.csv형태로 나오도록 수정
+
