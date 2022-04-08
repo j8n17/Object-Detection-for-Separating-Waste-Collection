@@ -132,7 +132,7 @@
 │   ├── 📝 train.py
 │   ├── 📝 detect.py
 │   └── etc
-└── 📂 z_customs
+└── 📂 custom analysis tools
     ├── 📝 S-Kfold.py
 		├── 📝 pseudo_labeling.py
     ├── 📝 analysis.ipynb
@@ -204,17 +204,6 @@
 
 #### 5-4. Analysis tool 
 
-- **Train**
+- custom analysis tools 내부에 readme 참고
 
-  ```
-  ```
-
-- **Inference**
-
-  ```
-  ```
-
-  
-
-#### 
 
