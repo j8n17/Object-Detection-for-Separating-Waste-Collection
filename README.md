@@ -1,4 +1,4 @@
-# object-detection-level2-cv-03
+# object-detection-level2-cv-08
 
 # 1. Introduction  
 <br/>
@@ -9,46 +9,42 @@
    <img src="https://kr.object.ncloudstorage.com/resume/boostcamp/boostcamplogo2.png"/>
 </p>
 
-본 과정은 NAVER Connect 재단 주관으로 인공지능과 딥러닝 Production의 End-to-End를 명확히 학습하고 실무에서 구현할 수 있도록 훈련하는 약 5개월간의 교육과정입니다. 전체 과정은 이론과정(U-stage, 5주)와 실무기반 프로젝트(P-stage, 15주)로 구성되어 있으며, 두 번째 대회인 `Object detection`과제에 대한 **Level2 - 03조** 의 문제해결방법을 기록합니다.
-  
+본 과정은 NAVER Connect 재단 주관으로 인공지능과 딥러닝 Production의 End-to-End를 명확히 학습하고 실무에서 구현할 수 있도록 훈련하는 약 5개월간의 교육과정입니다. 전체 과정은 이론과정(U-stage, 5주)와 실무기반 프로젝트(P-stage, 15주)로 구성되어 있으며, 두 번째 대회인 `Object detection`과제에 대한 **Level2 - 08조** 의 문제해결방법을 기록합니다.
+
 <br/>
 
-## 🧙‍♀️ Dobbyision - 도비도비전잘한다  
-”도비도 비전을 잘합니다”  
+## 🧙‍♀️ 주행 청소년  
 ### 🔅 Members  
 
-김지수|박승찬|박준수|배지연|이승현|임문경|장석우
-:-:|:-:|:-:|:-:|:-:|:-:|:-:
-![image1][image1]|![image2][image2]|![image3][image3]|![image4][image4]|![image5][image5]|![image6][image6]|![image7][image7]
-[Github](https://github.com/memesoo99)|[Github](https://github.com/ark10806)|[Github](https://github.com/JJONSOO)|[Github](https://github.com/jiiyeon)|[Github](https://github.com/lsh3163)|[Github](https://github.com/larcane97)|[Github](https://github.com/sw-jang)
+허 석|이준혁|윤서연|김 준|이재홍
+:-:|:-:|:-:|:-:|:-:
+ [Github](https://github.com/hursuk1) | [Github](https://github.com/zzundi) | [Github](https://github.com/minakusi) | [Github](https://github.com/j8n17) | [Github](https://github.com/haymrpig) 
 
 
 ### 🔅 Contribution  
-- `김지수` &nbsp; Data Synthesis • Model Searching • Model Experiment  
-- `박승찬` &nbsp; Custom Dataset • Pseudo Labeling • Model Searching • Model Experiment • Ensemble   
-- `박준수` &nbsp; Data Synthesis • Model Searching • Model Experiment • Ensemble  
-- `배지연` &nbsp; Model Evaluation • Document Recording  
-- `이승현` &nbsp; EDA • Modeling • Model Experiment • Ensemble
-- `임문경` &nbsp; EDA • Data Augmentation • Model Searching • Model Experiment  
-- `장석우` &nbsp; EDA • Modeling • Model Experiment • Ensemble 
-
-[image1]: https://kr.object.ncloudstorage.com/resume/boostcamp/00.png
-[image2]: https://kr.object.ncloudstorage.com/resume/boostcamp/01.png
-[image3]: https://kr.object.ncloudstorage.com/resume/boostcamp/02.png
-[image4]: https://kr.object.ncloudstorage.com/resume/boostcamp/03.png
-[image5]: https://kr.object.ncloudstorage.com/resume/boostcamp/04.png
-[image6]: https://kr.object.ncloudstorage.com/resume/boostcamp/05.png
-[image7]: https://kr.object.ncloudstorage.com/resume/boostcamp/06.png
-
+- `허 석`   yolov5 model 실험 / mmdection Cascade 구조 사용 및 분석
+- `이준혁` data augmentation 실험 / EfficientDet 모델 실험   
+- `윤서연` EDA&pseudo labeling json 파일 생성 코드 / detectron2 라이브러리 사용하여 모델 학습  
+- `김 준`   mmdetection 코드 분석 / atss, dyhead 활용 / 앙상블 
+- `이재홍` analysis tool 코드 작성 / mmdetection 모델 실험 / Cross-Validation 코드 작성
 
 <br/>
 
+### ⚙ Development Environment
+
+- 협업 툴 : GitHub, WandB, Notion
+- 개발 환경
+  - OS : Ubuntu 18.04
+  - GPU : V100
+  - 언어 : Python 3.7
+  - dependency : Pytorch 1.7.1
+
 # 2. Project Outline  
 
-![competition_title](https://kr.object.ncloudstorage.com/resume/boostcamp/competition.png)
+![image-20220408164307875](../../../AppData/Roaming/Typora/typora-user-images/image-20220408164307875.png)
 
 - Task : Object detection
-- Date : 2021.09.27 - 2021.10.15 (3 weeks)
+- Date : 2022.03.21 - 2022.04.07 (3 weeks)
 - Description : 쓰레기 사진을 입력받아서 `일반 쓰레기, 플라스틱, 종이, 유리 등`를 추측하여 `10개의 class`로 분류하고 박스의 영역을 구합니다.   
 - Image Resolution : (1024 x 1024)
 - Train : 4,833
@@ -58,73 +54,167 @@
 
 
 ### 🏆 Final Score  
-<p align="center">
-   <img src="https://kr.object.ncloudstorage.com/resume/boostcamp/leaderboard.png">
-</p>
+![image-20220408164449396](../../../AppData/Roaming/Typora/typora-user-images/image-20220408164449396.png)
+
 
 <br/>
 
 # 3. Solution
-![process][process]
-
 ### KEY POINT
-- 클래스의 불균형 문제가 모델의 성능에 큰 영향을 미치지 않습니다
-- 오히려 객체의 수가 가장 많은 Paper 클래스에 대한 AP가 낮게 평가됩니다. 
-- Small object 문제를 해결하는게 핵심입니다. 
 
-&nbsp; &nbsp; → 주요 논점을 해결하는 방법론을 제시하고 실험결과를 공유하며 토론을 반복했습니다   
+- **General trash가 데이터 양에 비해 낮은 검출율을 보였다.**
 
-[process]: https://kr.object.ncloudstorage.com/resume/boostcamp/pipeline.png
+  > 일반 쓰레기 범주가 너무 방대해서 생기는 문제로 보였다. 
+  >
+  > ( 데이터셋 자체 문제로 인한 개선 불가 )
+
+- **클래스 간 불균형 문제**
+
+  > Focal Loss, Over Sampling을 사용하여 개선
+
+- **small / medium object에 대한 낮은 검출율**
+
+  > Multiscale, base anchor size 조절, stride 조절을 통해 개선
+
+- **높은 bias로 인한 under fitting**
+
+  > 더 큰 backbone (Swin L)을 이용하여 개선
+
+- **문제점 파악을 위한 Analysis Tool 사용 및 코드 작성**
+
 <br/>
 
 ### Checklist
-More Detail : https://kr.object.ncloudstorage.com/resume/boostcamp/CV3%EC%A1%B0%20%EB%B0%9C%ED%91%9C.pdf
+[More Detail](여기다가 wrap up report  링크 달기)
+
 - [x] Test Time Augmentation
-- [x] Ensemble(Universenet, Swin, YoloR, Yolov5 등)
-- [x] Augmentation(background patches, cutmix)
+- [x] Ensemble(ATSS, Cascade R-CNN, YOLOv5x 등)
+- [x] Augmentation
 - [x] Multi-scale learning
 - [x] Oversampling
-- [x] Custom anchor ratio
 - [x] Pseudo labeling
-- [x] Collage
-- [x] Stratified Kfold
-- [x] Transfer learning(2 stage training)
-- [ ] Ray
-- [ ] Semi-supervised learning
+- [x] Stratified K-fold
+- [x] Transfer learning
+- [x] WandB
 
 ### Evaluation
 
-| Method| mAP| K-fold|
+| Method| mAP | Pseudo Labeling |
 | --- | --- | --- |
-|cascade RCNN + swin| 0.677| 0.704|
-|CBNet|0.584|-|
-|UniverseNet|0.594|0.604|
-|YoloR|0.611|- |
-|Yolov5|0.572|-|
-|VFNet|0.562|-|
-|HTC|0.647|-|
+|ATSS (Dyhead)| 0.6443 | O |
+|Cascade R-CNN| 0.6320 |O|
+|YOLOv5s|0.4492| X               |
+|YOLOv5m|0.5001|X |
+|YOLOv5L|0.5182|X|
+|YOLOv5x|0.5984|O|
+| ATSS (Dyhead) + YOLOv5x (2개 ensemble)                 | 0.6786 | X               |
+|ATSS (Dyhead) + Cascade R-CNN + YOLOv5x (3개 ensemble)|0.6932|X|
 
-# 4. How to Use
+
+
+# 4. Project Structure
 
 
 ```
-.
-├──/dataset
-|   ├── train.json
-|   ├── test.json
-|   ├── /train
-|   ├── /test
-├──/object-detection-level2-cv-03
-│   ├── utils
-│   ├── model1
-│         ├── config.py
-│         └── readme.md
-│   ├── model2
-│         ├── config.py
-│         └── readme.md
+├── 📂 detectron2
+│   ├── 📝 train.py
+│   ├── 📝 inference.py
+│   └── etc
+├── 📂 mmdetection
+│   ├── 📂 configs
+│   │   └── 📂 custom
+│   ├── 📂 tools
+│   │   ├── 📝 train.py
+│   │   ├── 📝 test.py
+│   │   └── 📝 inference.py
+│   └── etc
+├── 📂 yolov5
+│   ├── 📝 train.py
+│   ├── 📝 detect.py
+│   └── etc
+└── 📂 z_customs
+    ├── 📝 S-Kfold.py
+		├── 📝 pseudo_labeling.py
+    ├── 📝 analysis.ipynb
+		├── 📝 ensemble.ipynb
+		└── etc
 ```
 
-- `model`안에는 각각 **config.py** •  **readme.md**가 들어있습니다  
-- `utils` 에는 앙상블, stratified k-fold, cutmix, 콜라주 기법 등 자체 구현한 util 모듈들이 포함되어 있습니다.
-- 사용자는 전체 코드를 내려받은 후 설명서에 따라 옵션을 지정하여 개별 라이브러리의 모델을 활용할 수 있습니다
-- 각 라이브러리의 구성요소는 `readme.md`에서 확인할 수 있습니다  
+- `detectron2`, `mmdetection`, `yolov5`에는 각각 `library file`들과 `README.md`가 존재합니다.
+- `z_customs`에는 `stratified k-fold / pseudo labeling / analysis tool / ensemble` 등 자체 구현 모듈이 존재합니다.
+- 각 라이브러리의 구성요소는 `README.md`에서 확인할 수 있습니다.
+
+
+
+# 5. How to use
+
+#### 5-1. YOLOv5
+
+- **Train**
+
+  ```python
+  python train.py --img {img size} --batch {batch size} --epochs {epochs} --data {data yaml location} --weights {weight file loacation} --multi_scale
+  ```
+
+- **Inference**
+
+  ```python
+  python detect.py --weights {weight file location} --source {data yaml location} --img {img size} --name {save name} --half --save-txt --save-conf --augment
+  ```
+
+- **to csv**
+
+  ```python
+  python txt2csv_for_submission.py --result_path {label txt location} --save_name {save_name}
+  ```
+
+#### 5-2. detectron2
+
+- **Train**
+
+  ```python
+  python train.py
+  # cfg: .yaml 파일 변경
+  # weight: cfg.MODEL.WEIGHTS 변경
+  ```
+
+- **Inference**
+
+  ```python
+  python inference.py
+  # cfg: .yaml 파일 변경
+  # weight: cfg.MODEL.WEIGHTS pth변경
+  ```
+
+#### 5-3. mmdetection
+
+- **Train**
+
+  ```python
+  python train.py [config file path] --work-dir [directory path to save logs and models]
+  ```
+
+- **Inference**
+
+  ```python
+  python inference.py [config file path] [checkpoint file path] --name [submission file name]
+  ```
+
+
+
+#### 5-4. Analysis tool 
+
+- **Train**
+
+  ```
+  ```
+
+- **Inference**
+
+  ```
+  ```
+
+  
+
+#### 
+
