@@ -41,7 +41,7 @@
 
 # 2. Project Outline  
 
-![image-20220408164307875](../../../AppData/Roaming/Typora/typora-user-images/image-20220408164307875.png)
+![image](https://user-images.githubusercontent.com/71866756/162425733-802a0a99-d368-4056-8d27-9c8e1b2c8247.png)
 
 - Task : Object detection
 - Date : 2022.03.21 - 2022.04.07 (3 weeks)
@@ -54,7 +54,7 @@
 
 
 ### 🏆 Final Score  
-![image-20220408164449396](../../../AppData/Roaming/Typora/typora-user-images/image-20220408164449396.png)
+![image](https://user-images.githubusercontent.com/71866756/162425804-142bcc1c-ad37-4d13-8771-d5b9ae98e52e.png)
 
 
 <br/>
