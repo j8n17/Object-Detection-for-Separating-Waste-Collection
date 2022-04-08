@@ -10,7 +10,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
 - **결과**
 
-  ![image](https://user-images.githubusercontent.com/71866756/159278927-57bd4b8f-ef48-4b84-93bd-7102bcc6bdf5.png)
+  <img src="https://user-images.githubusercontent.com/71866756/159278927-57bd4b8f-ef48-4b84-93bd-7102bcc6bdf5.png" alt="image" style="zoom:50%;" />
 
 # 2. kaggle trash dataset modification
 
@@ -20,7 +20,7 @@ Competition에 필요한 다양한 파일들에 대한 간단한 설명과 사�
 
     [여기](https://www.kaggle.com/datasets/kneroma/tacotrashdataset?select=data)에서 download 클릭!
 
-    ![image](https://user-images.githubusercontent.com/71866756/160035859-b0c0cf95-4930-4701-a22c-2398ae993f28.png)
+    <img src="https://user-images.githubusercontent.com/71866756/160035859-b0c0cf95-4930-4701-a22c-2398ae993f28.png" alt="image" style="zoom:50%;" />
 
   - Step2. kaggle_dataset_transform.ipynb download
 
