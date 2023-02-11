@@ -41,7 +41,8 @@
 
 # 2. Project Outline  
 
-![image](https://user-images.githubusercontent.com/71866756/162425733-802a0a99-d368-4056-8d27-9c8e1b2c8247.png)
+![image](https://user-images.githubusercontent.com/71866756/162425733-802a0a99-d368-4056-8d27-9c8e1b2c8247.png) |![image-20220413170311282](https://user-images.githubusercontent.com/85532197/218266034-0dc805a8-e6b0-448d-9be2-41fd81f3f9bc.png)
+--- | --- |
 
 - Task : Object detection
 - Date : 2022.03.21 - 2022.04.07 (3 weeks)
